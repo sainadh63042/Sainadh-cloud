@@ -1,0 +1,12 @@
+[
+    {"id": 1, "name": "Virat Kohli", "country": "India", "role": "Batsman"},
+    {"id": 2, "name": "Kane Williamson", "country": "New Zealand", "role": "Batsman"},
+    {"id": 3, "name": "Joe Root", "country": "England", "role": "Batsman"},
+    {"id": 4, "name": "Steve Smith", "country": "Australia", "role": "Batsman"},
+    {"id": 5, "name": "Rohit Sharma", "country": "India", "role": "Batsman"},
+    {"id": 6, "name": "Babar Azam", "country": "Pakistan", "role": "Batsman"},
+    {"id": 7, "name": "Kagiso Rabada", "country": "South Africa", "role": "Bowler"},
+    {"id": 8, "name": "Jasprit Bumrah", "country": "India", "role": "Bowler"},
+    {"id": 9, "name": "Pat Cummins", "country": "Australia", "role": "Bowler"},
+    {"id": 10, "name": "Shakib Al Hasan", "country": "Bangladesh", "role": "All-Rounder"}
+]
