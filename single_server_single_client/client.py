@@ -30,6 +30,8 @@ class Client:
         try:
             while True:
                 response = self.sock.recv(config_data["size"]).decode(config_data["format"])
+                if response:
+                    break
                 print("server: {}".format(response))
         except Exception as e:
             print("error: ", str(e))
@@ -39,7 +41,7 @@ class Client:
 
 def main():
     server_config = config_data["server"]
-    client = Client(server_config["host"], server_config["port"])
+    client = Client(server_config["ip"], server_config["port"])
     thread_1 = threading.Thread(target=client.send_message)
     thread_2 = threading.Thread(target=client.receive_message)
     thread_1.start()
