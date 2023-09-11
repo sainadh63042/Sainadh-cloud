@@ -19,6 +19,8 @@ class ClientHandler:
                     print("Client {} left the chat.".format(self.client_addr))
                     break
                 print("client: {}".format(msg))
+                if msg.lower() == "bye":
+                    self.client_sock.send(msg.encode(config_data["format"]))
 
         except Exception as e:
             print("Error with client {}: {}".format(self.client_addr, str(e)))
@@ -60,7 +62,7 @@ class Server:
 
 def main():
     server_config = config_data["server"]
-    server = Server(server_config["host"], server_config["port"])
+    server = Server(server_config["ip"], server_config["port"])
     server.start()
 
 
