@@ -30,9 +30,10 @@ class Client:
         try:
             while True:
                 response = self.sock.recv(config_data["size"]).decode(config_data["format"])
-                if response:
+                if response == "bye":
                     break
-                print("server: {}".format(response))
+                if response:
+                    print("server: {}".format(response))
         except Exception as e:
             print("error: ", str(e))
         finally:
