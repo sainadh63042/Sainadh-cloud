@@ -6,23 +6,23 @@ class Calculator:
     def add(self, num1, num2):
         result = num1 + num2
         self.results.append(f"Addition: {num1} + {num2} = {result}")
-        print(f"Addition:", result)
+        print(f"Addition: {num1} + {num2} = {result}")
 
     def subtract(self, num1, num2):
         result = num1 - num2
         self.results.append(f"Subtraction: {num1} - {num2} = {result}")
-        print(f"Subtraction:", result)
+        print(f"Subtraction: {num1} - {num2} = {result}")
 
     def multiply(self, num1, num2):
         result = num1 * num2
         self.results.append(f"Multiplication: {num1} * {num2} = {result}")
-        print(f"Multiplication:", result)
+        print(f"Multiplication: {num1} * {num2} = {result}")
 
     def divide(self, num1, num2):
         if num2 != 0:
             result = num1 / num2
             self.results.append(f"Division: {num1} / {num2} = {result}")
-            print(f"Division:", result)
+            print(f"Division: {num1} / {num2} = {result}")
         else:
             self.results.append("Division by zero is not allowed.")
             print("Division by zero is not allowed.")
