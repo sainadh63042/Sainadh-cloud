@@ -51,10 +51,11 @@ class Mobile:
 
 
 def main():
-    mobile_config = config_data["servers"]["mobile_server"]
-    mobile = Mobile(mobile_config["host"], mobile_config["port"])
+    server_config = config_data["servers"]
+    mobile_config = server_config["mobile_server"]
+    mobile = Mobile(mobile_config["ip"], mobile_config["port"])
     mobile.start()
 
 
 if __name__ == "__main__":
-  main()
+    main()
