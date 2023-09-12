@@ -30,7 +30,7 @@ def broadcast():
         while True:
             message = input("Enter message to send (type 'bye' to exit): ")
             for server in server_config.values():
-                client_obj = Client(server["host"], server["port"])
+                client_obj = Client(server["ip"], server["port"])
                 client_obj.send_message(message)
                 client_obj.response()
                 client_obj.close()
