@@ -51,10 +51,12 @@ class Computer:
 
 
 def main():
-    computer_config = config_data["servers"]["computer_server"]
-    computer = Computer(computer_config["host"], computer_config["port"])
+    server_config = config_data["servers"]
+    computer_config = server_config["computer_server"]
+    computer = Computer(computer_config["ip"], computer_config["port"])
     computer.start()
 
 
 if __name__ == "__main__":
     main()
+ 
