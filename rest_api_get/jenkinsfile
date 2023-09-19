@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the code from GitHub
+                script {
+                    def gitCreds = credentials('GitHubCredentials') // Create a secret credential in Jenkins for GitHub
+                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/Sainadh63042/Sainadh-cloud
+.git', credentialsId: gitCreds.id]]])
+                }
+            }
+        }
+
+        stage('Dockerize') {
+            steps {
+                // Build and Dockerize your Flask app
+                script {
+                    docker.build("your-docker-image-name:${BUILD_NUMBER}")
+                }
+            }
+        }
+
+        stage('Push to DockerHub') {
+            steps {
+                // Push the Docker image to DockerHub
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'DockerHubCredentials') {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+    }
+}
