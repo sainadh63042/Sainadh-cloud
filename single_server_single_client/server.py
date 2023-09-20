@@ -8,16 +8,6 @@ with open("config_file.json", "r") as config_file:
 
 class ClientHandler:
     def __init__(self, client_sock, client_addr):
-        self.client_sock = client_sockimport socket
-import threading
-import json
-
-with open("config_file.json", "r") as config_file:
-    config_data = json.load(config_file)
-
-
-class ClientHandler:
-    def __init__(self, client_sock, client_addr):
         self.client_sock = client_sock
         self.client_addr = client_addr
 
