@@ -1,0 +1,45 @@
+pipeline{
+    
+    agent any
+    
+    environment {
+        DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+    }
+    
+    stages {
+        stage('gitclone') {
+            
+            steps {
+                git 'https://github.com/sainadh63042/Sainadh-cloud.git'
+            }
+        }
+        
+        stage('Build') {
+            
+            steps {
+                sh 'pwd;ls;cd ..;pwd;ls;cd rest_api_get;pwd;ls'
+                sh 'docker build -t sainadh01/flaskapp_test:latest -f rest_api_get/Dockerfile .'
+                
+            }
+        }
+        /*stage('Login') {
+            
+            steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $$DOCKERHUB_CREDENTIALS_USR --passsword-stdin'
+            }
+        }
+        stage('Push') {
+            
+            steps {
+                sh 'docker push sainadh01/flaskapp_test:latest'
+            }
+        }*/
+    }
+    
+    /*post {
+        always {
+            sh 'docker logout'
+        }
+    }*/
+    
+}
