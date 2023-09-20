@@ -1,12 +1,12 @@
 # Use the official Python image as the base image
 FROM python:3.8-slim
-ENV FLASK_APP get_api.py
+ENV FLASK_APP /get_api/rest_api_get/get_api.py
 # Set the working directory in the container
 WORKDIR /getapi
 
 # Copy the current directory contents into the container at /getapi
-COPY restapi_get.py /getapi
-COPY cricket_players.json /getapi
+COPY /get_api/rest_api_get/get_api.py /getapi
+COPY /get_api/rest_api_get/cricket_players.json /getapi
 
 # Install Flask and any other dependencies
 RUN pip install Flask
