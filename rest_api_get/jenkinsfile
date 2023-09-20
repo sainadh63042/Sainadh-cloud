@@ -17,7 +17,7 @@ pipeline{
         stage('Build') {
             
             steps {
-                sh 'pwd;ls;cd ..;pwd;ls;cd rest_api_get;pwd;ls'
+                sh 'pwd;ls;cd ..;pwd;ls;'
                 sh 'docker build -t sainadh01/flaskapp_test:latest -f rest_api_get/Dockerfile .'
                 
             }
