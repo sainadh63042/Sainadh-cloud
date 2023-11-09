@@ -1,0 +1,9 @@
+- name: Create Directory on Ubuntu Instance
+  hosts: my_group
+  become: true
+
+  tasks:
+    - name: Create a directory
+      file:
+        path: /home/ubuntu/my_dir
+        state: directory
