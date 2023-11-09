@@ -1,0 +1,8 @@
+all:
+  children:
+    my_group:
+      hosts:
+        host1:
+          ansible_host: 13.236.181.55
+          ansible_user: ubuntu
+          ansible_ssh_private_key_file: /home/user/ansible_dir/sainadh_linux3_key.pem
