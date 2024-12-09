@@ -1,0 +1,7 @@
+{
+    "num_repeats": 500,
+    "example_records" : ["[NEW] tcp      6 120 SYN_SENT src=10.1.2.3 dst={dst1} sport=47800 dport=21 [UNREPLIED] src=203.0.113.47 dst={dst2} sport=21 dport=47800 helper=ftp",
+        "[UPDATE] tcp      6 60 SYN_RECV src=10.1.2.3 dst={dst1} sport=47800 dport=21 src=203.0.113.47 dst={dst2} sport=21 dport=47800 helper=ftp,",
+        "[UPDATE] tcp      6 432000 ESTABLISHED src=10.1.2.3 dst={dst1} sport=47800 dport=21 src=203.0.113.47 dst={dst2} sport=21 dport=47800 [ASSURED] helper=ftp"]
+
+}
